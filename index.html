@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maikel is gone in</title>
+  <style>
+    body { text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Maikel says goodbye in <span id="counter"></span> seconds</h1>
+  <p>D-Day: <span id="dday"></span></p>
+  <script>
+    function draw(){
+      const dday = new Date(2022, 8, 22, 0, 0, 0, 0)
+      const today = new Date()
+      if(dday - today > 0){
+        document.querySelector('#counter').innerHTML = dday - today
+        document.querySelector('#dday').innerHTML = `${dday.getDate()}.${dday.getMonth()+1}.${dday.getFullYear()}`
+        window.requestAnimationFrame(draw)
+      }else{
+        document.querySelector('body').innerHTML = '<h1>:_(</h1>'
+      }
+    }
+    draw();
+  </script>
+</body>
+</html>
