@@ -9,14 +9,22 @@
   </style>
 </head>
 <body>
-  <h1>Maikel says goodbye in <span id="counter"></span> milliseconds</h1>
+  <h1>Maikel says goodbye in <span id="counter-millis"></span> milliseconds</h1>
+  <h2><span id="counter-secs"></span> seconds</h2>
+  <h3><span id="counter-mins"></span> minutes</h3>
+  <h4><span id="counter-hours"></span> hours</h4>
+  <h4><span id="counter-days"></span> days</h4>
   <p>D-Day: <span id="dday"></span></p>
   <script>
     function draw(){
-      const dday = new Date(2022, 8, 16, 0, 0, 0, 0)
+      const dday = new Date(2022, 8, 17, 0, 0, 0, 0)
       const today = new Date()
       if(dday - today > 0){
-        document.querySelector('#counter').innerHTML = dday - today
+        document.querySelector('#counter-millis').innerHTML = dday - today > 0 ? dday - today : 0
+        document.querySelector('#counter-secs').innerHTML = Math.round((dday - today) / 1000) > 0 ? Math.round((dday - today) / 1000) : 0
+        document.querySelector('#counter-mins').innerHTML = Math.round((dday - today) / 1000 / 60) > 0 ? Math.round((dday - today) / 1000 / 60) : 0
+        document.querySelector('#counter-hours').innerHTML = Math.round((dday - today) / 1000 / 60 / 60) > 0 ? Math.round((dday - today) / 1000 / 60 / 60) : 0
+        document.querySelector('#counter-days').innerHTML = Math.round((dday - today) / 1000 / 60 / 60 / 24) > 0 ? Math.round((dday - today) / 1000 / 60 / 60 / 24) : 0
         document.querySelector('#dday').innerHTML = `${dday.getDate()}.${dday.getMonth()+1}.${dday.getFullYear()}`
         window.requestAnimationFrame(draw)
       }else{
