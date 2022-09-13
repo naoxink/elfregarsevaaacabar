@@ -25,7 +25,7 @@
         document.querySelector('#counter-mins').innerHTML = Math.round((dday - today) / 1000 / 60) > 0 ? Math.round((dday - today) / 1000 / 60) : 0
         document.querySelector('#counter-hours').innerHTML = Math.round((dday - today) / 1000 / 60 / 60) > 0 ? Math.round((dday - today) / 1000 / 60 / 60) : 0
         document.querySelector('#counter-days').innerHTML = Math.round((dday - today) / 1000 / 60 / 60 / 24) > 0 ? Math.round((dday - today) / 1000 / 60 / 60 / 24) : 0
-        document.querySelector('#dday').innerHTML = `${dday.getDate()}.${dday.getMonth()+1}.${dday.getFullYear()}`
+        document.querySelector('#dday').innerHTML = `${dday.getDate()}.${dday.getMonth()+1}.${dday.getFullYear()} ${dday.getHours()}:${dday.getMinutes()}`
         window.requestAnimationFrame(draw)
       }else{
         document.querySelector('body').innerHTML = '<h1>:_(</h1>'
