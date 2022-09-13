@@ -17,7 +17,7 @@
   <p>D-Day: <span id="dday"></span></p>
   <script>
     function draw(){
-      const dday = new Date(2022, 8, 17, 0, 0, 0, 0)
+      const dday = new Date(2022, 8, 16, 15, 0, 0, 0)
       const today = new Date()
       if(dday - today > 0){
         document.querySelector('#counter-millis').innerHTML = dday - today > 0 ? dday - today : 0
