@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maikel is gone in</title>
+  <title>El fregar se va a acabar en</title>
   <style>
     body { text-align: center; }
   </style>
 </head>
 <body>
-  <h1>Maikel says goodbye in <span id="counter-millis"></span> milliseconds</h1>
-  <h2><span id="counter-secs"></span> seconds</h2>
-  <h3><span id="counter-mins"></span> minutes</h3>
-  <h4><span id="counter-hours"></span> hours</h4>
-  <h4><span id="counter-days"></span> days</h4>
+  <h1>Maikel says goodbye in <span id="counter-millis"></span> milisegundos</h1>
+  <h2><span id="counter-secs"></span> segundos</h2>
+  <h3><span id="counter-mins"></span> minutos</h3>
+  <h4><span id="counter-hours"></span> horas</h4>
+  <h4><span id="counter-days"></span> días</h4>
   <p>D-Day: <span id="dday"></span></p>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ16GAz936pbINvtjktyoY1FxBdAP0OX_V3CA&usqp=CAU">
   <script>
     function draw(){
-      const dday = new Date(2022, 8, 16, 15, 0, 0, 0)
+      const dday = new Date(2023, 7, 16, 20, 30, 0, 0)
       const today = new Date()
       if(dday - today > 0){
         document.querySelector('#counter-millis').innerHTML = dday - today > 0 ? dday - today : 0
@@ -29,7 +28,7 @@
         document.querySelector('#dday').innerHTML = `${dday.getDate()}.${dday.getMonth()+1}.${dday.getFullYear()} ${dday.getHours()}:${dday.getMinutes()}0`
         window.requestAnimationFrame(draw)
       }else{
-        document.querySelector('body').innerHTML = '<h1>¡Te echaremos de menos!</h1><h3>Te deseamos mucha suerte en tu nuevo trabajo y..</h3><h4>no te angusties mucho :D</h4><h5>Esperamos mantener el contacto en Lo Importante ¿eh? no te escapas tan rápido xD</h5>'
+        document.querySelector('body').innerHTML = '<h1>¡Se acabó el fregar a mano!</h1><h3>¡Viva el lavavajillas!</h3>'
       }
     }
     draw();
